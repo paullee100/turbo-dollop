@@ -1,0 +1,278 @@
+/********************* SPIN WHEEL *********************/
+.decide-for-me {
+    display: flex;
+    padding: 80px 0;
+    background-color: aqua;
+    width: 100%;
+    height: 100vh;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.left-side {
+    flex-basis: 65%;
+}
+
+.right-side {
+    flex-basis: 30%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/********************* RESULT BOX *********************/
+#result-container {
+    display: none;
+    min-width: 640px;
+    min-height: 300px;
+    height: 300px;
+    width: 100%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%, -50%);
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.popout {
+    animation: popout 0.25s ease;
+}
+
+@keyframes popout {
+    from { transform:translate(-50%, -50%) scale(0.25)}
+    /* 80% { transform:translate(-50%, -50%) scale(1.2)} */
+    to { transform:translate(-50%, -50%) scale(1)}
+}
+
+.popin {
+    animation: popin 0.5s ease;
+}
+
+@keyframes popin {
+    from { transform:translate(-50%, -50%) scale(1)}
+    to { transform:translate(-50%, -50%) scale(0);}
+}
+
+.q-card {
+    display: flex;
+    background-color: silver;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#result {
+    font-size: 25px;
+    color: red;
+    margin: 10px;
+}
+
+#close-button {
+    height: 10%;
+    width: 25%;
+    cursor: pointer;
+}
+
+/********************* WHEEL *********************/
+.wheel-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+#wheel {
+    max-height: inherit;
+    width: inherit;
+    top: 0;
+    padding: 0;
+}
+
+#spin-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 26%;
+    width: 26%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0;
+    background: radial-gradient(#fdcf3b 50%, #d88a40 85%);
+    color: #c66e16;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+#spin-btn:disabled {
+    cursor: default;
+}
+
+.selector {
+    width: 2em;
+    border-bottom: 5px solid white;
+    position: absolute;
+    top: 49%;
+    right: -1%;
+}
+
+/********************* WHEEL INPUT DATA *********************/
+
+.add-item-container ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 300px;
+    height: 1000px;
+}
+
+.add-item-container ul li {
+    margin: 1px 0;
+}
+
+.add-item-container ul li button {
+    margin-left: 10px;
+    float: right;
+}
+
+.add-item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#item-button {
+    cursor: pointer;
+}
+
+#item-button:disabled {
+    cursor: default;
+}
+
+#item-input {
+    margin: 10px 10px 10px 0;
+}
+
+#percentage {
+    display: none;
+    width: 25px;
+    margin-right: 10px;
+}
+
+/********************* DROP DOWN *********************/
+
+.wheel-options-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-button {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 0.5rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 10px 0px;
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 10px 0px;
+    border-radius: 5px;
+    margin-top: 0.3rem;
+    background: white;
+    transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+
+    transform: translateY(0.5rem);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.show {
+    transform: translateY(0rem);
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown div {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    color: black
+}
+
+.dropdown div:hover {
+    background-color: #166e67;
+    color:white;
+}
+
+.current-option {
+    display: flex;
+    color: white;
+}
+
+#remove-after-selected, #default {
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media only screen and (max-width: 379px) {
+    .row {
+        width: 100vh;
+        max-width: 375px;
+        /* flex-direction: column; */
+        /* flex-wrap: none; */
+    }
+
+    .left-side, .right-side {
+        flex-basis: 100%;
+    }
+    
+    .wheel-container {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        /* width: 50; */
+    }
+    
+    #wheel {
+        /* max-height: inherit; */
+        /* width: inherit; */
+        top: 0;
+        padding: 0;
+    }
+
+    .wheel-options-container, .add-item-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}

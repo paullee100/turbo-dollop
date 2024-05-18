@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Classic Pool Game</title>
+        <link rel="stylesheet" href="../styling/8ball.css"/>
+
+        <script src="../src/8ball/lib/LAB.min.js"></script>
+        <script>
+            $LAB
+                .script('../src/8ball/System/Keys.js').wait()
+                .script('../src/8ball/System/Color.js').wait()
+                .script('../src/8ball/Geom/Vector2.js').wait()
+                .script('../src/8ball/Input/ButtonState.js').wait()
+                .script('../src/8ball/Input/Keyboard.js').wait()
+                .script('../src/8ball/Input/Mouse.js').wait()
+                .script('../src/8ball/Constants.js').wait()
+                .script('../src/8ball/Canvas.js').wait()
+                .script('../src/8ball/GameObjects/Score.js').wait()
+                .script('../src/8ball/GameObjects/Ball.js').wait()
+                .script('../src/8ball/GameObjects/Stick.js').wait()
+                .script('../src/8ball/Menu/Label.js').wait()
+                .script('../src/8ball/Menu/Button.js').wait()
+                .script('../src/8ball/Menu/Menu.js').wait()
+                .script('../src/8ball/Menu/MainMenu.js').wait()
+                .script('../src/8ball/AI/Opponent.js').wait()
+                .script('../src/8ball/AI/AIPolicy.js').wait()
+                .script('../src/8ball/AI/AITrainer.js').wait()
+                .script('../src/8ball/GameObjects/Player.js').wait()
+                .script('../src/8ball/GamePolicy.js').wait()
+                .script('../src/8ball/GameWorld.js').wait()
+                .script('../src/8ball/Game.js').wait()
+                .script('../src/8ball/Assets.js').wait(function () {
+                    Game.start('gameArea','screen', 1500, 825);
+                });
+
+        </script>
+    </head>
+
+    <body style="background-color: black">
+        <div id="gameArea">
+            <canvas id="screen" width="2000" height="1000"></canvas>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spin Wheel</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styling/global.css">
+        <link rel="stylesheet" href="../styling/createteams.css">
+    </head>
+
+    <body>
+
+        <div class="header">
+            <div class="container">
+                <nav>
+                    <ul class="menu-items">
+                        <li><a href="rng.html">Random Number Generator</a></li>
+                        <li><a href="spinwheel.html">Decide For Me</a></li>
+                        <li>Create Teams</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!---------------------------------------- CREATE TEAMS ---------------------------------------->
+        <div class="create-teams">
+            <div class="input-name-container">
+                <div class="name">Input Name</div>
+                <input id="input-name" type="text" placeholder="Input Name Here" onkeydown="enterInput(this, event)">
+                <button id="enter-name" onclick="enterName()"><span>Enter</span></button>
+            </div>
+            <div id="name-container" class="name-container">
+                <p class="list-names">
+                    Here will be the list of names!!!
+                </p>
+            </div>
+            <div class="divide-into-teams-container">
+                <div class="how-many-teams-container">
+                    <div class="how-many-teams-text">How Many Teams?</div>
+                    <input id="input-number-of-teams" type="number" placeholder="Enter the number of teams to be made" onkeydown="enterInput(this, event)">
+                </div>
+                <button id="generate-teams" onclick="createTeams()"><span>Generate Teams</span></button>
+                <div id="table-container">
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../src/CreateTeams.js"></script>
+
+    </body>
+</html>

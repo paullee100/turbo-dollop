@@ -1,0 +1,57 @@
+/********************* RANDOM NUMBER GENERATOR *********************/
+.random-number-generator {
+    display: flex;
+    height: 100vh;
+    padding: 80px 0;
+    background-color: aqua;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container input {
+    text-align: center;
+}
+
+.min-range-container, .max-range-container {
+    padding: 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.boolean-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.top-radio-button, .bottom-radio-button {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.output-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 50px;
+}

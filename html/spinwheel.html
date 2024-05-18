@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spin Wheel</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styling/global.css">
+        <link rel="stylesheet" href="../styling/spinwheel.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="container">
+                <nav>
+                    <ul class="menu-items">
+                        <li><a href="rng.html">Random Number Generator</a></li>
+                        <li>Decide For Me</li>
+                        <li><a href="createteams.html">Create Teams</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!---------------------------------------- SPIN WHEEL ---------------------------------------->
+        <div class="decide-for-me">
+            <div id="result-container" class="">
+                <div class="q-card">
+                    <div id="result">Dummy Text</div>
+                    <button id="close-button">Close</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left-side">
+                    <div class="wheel-container">
+                        <button id="spin-btn">Spin</button>
+                        <canvas id="wheel"></canvas>
+                        <div class="selector"></div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="wheel-options-container">
+                        <button id="dropdown-button" class="dropdown-button">Dropdown</button>
+                        <div id="dropdown" class="dropdown">
+                            <div id="remove-after-selected">
+                                <input type="radio" name="dropdown-option">
+                                <div>Remove After Selected</div>
+                            </div>
+                            <div class="different_probability">
+                                <input type="radio" name="dropdown-option">
+                                <div>Different Probability</div>
+                            </div>
+                            <div id="default">
+                                <input type="radio" name="dropdown-option" checked="true">
+                                <div>Default</div>
+                            </div>
+                        </div>
+                        <div id="current-option">Default</div>
+                    </div>
+                    <div class="add-item-container">
+                        <div class="input-container">
+                            <input type="text" class="item-input" id="item-input" placeholder="Name of item">
+                            <input type="number" id="percentage" placeholder="%">
+                            <button id="item-button" onclick="insertItem()">Insert Item</button>    
+                        </div>
+                        <ul id="list-of-items">
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+        <script type="text/javascript" src="../src/SpinWheel.js"></script>
+
+    </body>
+</html>

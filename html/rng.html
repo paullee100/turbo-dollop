@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styling/global.css">
+        <link rel="stylesheet" href="../styling/rng.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="container">
+                <nav>
+                    <ul class="menu-items">
+                        <li>Random Number Generator</li>
+                        <li><a href="spinwheel.html">Decide For Me</a></li>
+                        <li><a href="createteams.html">Create Teams</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!---------------------------------------- RANDOM NUMBER GENERATOR ---------------------------------------->
+        <div class="random-number-generator">
+            <div class="container">
+                <div class="input-container">
+                    <div class="min-range-container">
+                        <input class="input-num" type="number" id="min-range" placeholder="Min Number">
+                    </div>
+                    <div class="max-range-container">
+                        <input class="input-num" type="number" id="max-range" placeholder="Max Number">
+                    </div>
+                </div>
+                <div class="boolean-container">
+                    <div class="top-radio-button">
+                        <input class="radio-button" name="range" type="radio" id="inclusive-button" checked="true" value="1">Inclusive</input>
+                    </div>
+                    <div class="bottom-radio-button">
+                        <input class="radio-button" name="range" type="radio" id="exclusive-button" value="2">Exclusive</input>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="click-me" onclick="generateRandomNumber()">Generate Random Number</button>
+                </div>
+                <div class="output-container">
+                    <div id="counter">Counter: 0</div>
+                    <div id="output">00000</div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../src/RandomNumberGenerator.js"></script>
+    </body>
+</html>
