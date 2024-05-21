@@ -58,9 +58,10 @@ function createTeams() {
     for (let i = 0; i < everyName.length; i++) {
 
         let index = Math.floor(Math.random() * teams.length);
-        // while (!teams.includes(index)) {
-        //     index = Math.floor(Math.random() * teams.length);
-        // }
+        while (visited.includes(index)) {
+            index = Math.floor(Math.random() * teams.length);
+        }
+        visited.push(index);
         teams[index].push(everyName[i]);
     }
 
@@ -74,11 +75,16 @@ function createTeams() {
     // Create a table header
     const headerRow = table.insertRow();
     for (let i = 0; i < numberOfTeams; i++) {
-        const inputTeamName = document.createElement("input");
+        const teamName = document.createElement("input");
+        teamName.addEventListener("keydown", (e) => inputTeamName(teamName, e))
         const th = document.createElement("th");
-        th.appendChild(inputTeamName);
+        th.appendChild(teamName);
         headerRow.appendChild(th);
     }
+
+    setTimeout(() => {
+        console.log(headerRow.offsetWidth);
+    }, 500);
 
     const row = table.insertRow();
     for (let i = 0; i < numberOfTeams; i++) {
@@ -93,6 +99,15 @@ function createTeams() {
     }
 
     tableContainer.appendChild(table);
+}
+
+console.log(window.screen.width);
+
+function inputTeamName(inputName, e) {
+    console.log(inputName);
+    if (e.key === "Enter") {
+        inputName.style.background = "transparent";
+    }
 }
 
 function clearTable() {

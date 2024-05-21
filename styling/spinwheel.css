@@ -242,12 +242,9 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-@media only screen and (max-width: 379px) {
+@media only screen and (max-width: 100vw) {
     .row {
-        width: 100vh;
-        max-width: 375px;
-        /* flex-direction: column; */
-        /* flex-wrap: none; */
+        width: 100vw;
     }
 
     .left-side, .right-side {

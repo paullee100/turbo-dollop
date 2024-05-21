@@ -388,6 +388,3 @@ document.documentElement.addEventListener("click", function() {
         toggleDropdown();
     }
 });
-
-
-console.log(window.screen.width);

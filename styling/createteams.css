@@ -1,17 +1,21 @@
 /********************* CREATE TEAMS *********************/
+body {
+  overflow: auto;
+  background-color: aqua;
+}
+
 .create-teams {
   display: flex;
   /* width: 100vh; */
   min-height: 100%;
   height: 100vh;
   flex-direction: column;
-  background-color: aqua;
-  overflow: auto;
 }
 
 .header {
   display: flex;
   flex-direction: row;
+  background-color: white;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -65,6 +69,10 @@ input[type="number"]::-webkit-inner-spin-button {
   transform: translate(-50%, -50%);
 }
 
+#table-container {
+  overflow: auto;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -78,6 +86,11 @@ table th, td {
 
 table th {
   background-color: #f2f2f2;
+}
+
+table th input {
+  background-color: transparent;
+  width: 100%;
 }
 
 table td ul {
