@@ -67,6 +67,7 @@ async function copyContent() {
     try {
         await navigator.clipboard.writeText(content);
         toolTipText.textContent = "Copied!";
+        toolTipText.style.marginTop = '-60px';
         console.log("Content copied to clipboard: " + content);
     } catch(err) {
         console.error("Failed to copy: ", err);
@@ -76,6 +77,7 @@ async function copyContent() {
 function resetText() {
     if (toolTipText.textContent !== 'Copy to clipboard' && toolTipText.textContent === 'Copied!') {
         toolTipText.textContent = 'Copy to clipboard';
+        toolTipText.style.marginTop = '-80px';
     }
 }
 
