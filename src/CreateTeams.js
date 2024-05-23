@@ -82,10 +82,6 @@ function createTeams() {
         headerRow.appendChild(th);
     }
 
-    setTimeout(() => {
-        console.log(headerRow.offsetWidth);
-    }, 500);
-
     const row = table.insertRow();
     for (let i = 0; i < numberOfTeams; i++) {
         const cell = row.insertCell();
@@ -96,12 +92,15 @@ function createTeams() {
             ul.appendChild(li);
         }
         cell.appendChild(ul);
+        
     }
 
     tableContainer.appendChild(table);
+    console.log(tableContainer.getBoundingClientRect().width);
+
 }
 
-console.log(window.screen.width);
+console.log(window.innerWidth);
 
 function inputTeamName(inputName, e) {
     console.log(inputName);
